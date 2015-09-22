@@ -1,0 +1,15 @@
+<body ng-app="bewd.tictactoe.board">
+<div ng-controller="BoardCtrl" class="container">
+  <table class="table table-condensed table-striped">
+    <tr ng-repeat="ticTacRow in vm.theBoard track by $index">
+      <td ng-repeat="column in ticTacRow track by $index">
+        <!-- <input type="text" ng-model="tictacRow[column]" placeholder="{{column}}"> -->
+        {{column}}
+      </td>
+    </tr>
+  </table>
+    <!-- X or O: <input type="text" ng-model="letter">
+    <button ng-click='addLetter()'>Assign</button>
+    {{letter}} -->
+  <button class="btn btn-default" ng-click="vm.makeYourMove()">Move</button>
+</div>

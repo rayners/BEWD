@@ -1,0 +1,29 @@
+doctype html
+html(lang="en", ng-app="bewd.tictactoe.board")
+    head
+      include ./includes/bower_bootstrap.jade
+      title Welcome #{username}
+    body
+      tic-tac-toe-board(the-board="[['X', 'O', 'X'], ['O', 'O', 'X'], ['O', 'X', '']]")
+      //- .container(ng-init="theList = ['David', 'John', 'Lee']; theAnswer = 47 - 5")
+      //-   h1 Hi #{username}
+      //-   h2 Want to play a game?
+      //-   //- p #{something}
+      //-   //- div(ng-init="username = 'Gerald'")
+      //-   //-   p Username: {{ username }}
+      //-   p The answer is {{ theAnswer }}
+      //-   //- button(ng-click='theAnswer = theAnswer + 1') Plus one!  
+      //-   
+      //-   .form-group
+      //-     label New name
+      //-     input(type="text" ng-model="newName" class="form-control")
+      //-     //or: input.form-control(type="text" ng-model="newName")
+      //-   button.btn.btn-default(ng-click="theList.push(newName); newName = ''") Add name
+      //-   
+      //-   .form-group
+      //-     label Filter
+      //-     input.form-control(type="text" ng-model="nameFilter")
+      //-   
+      //-   ul
+      //-     li(ng-repeat="name in theList | filter:nameFilter track by $index") 
+      //-       {{ name }}
