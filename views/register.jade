@@ -1,0 +1,21 @@
+doctype html
+html(lang="en", ng-app="bewd.tictactoe.board")
+    head
+      include ./includes/bower_bootstrap.jade
+      title User Registration
+    body  
+      include ./includes/flash.jade
+      .container
+        h1 User Registration
+        form(name="register", action="/register", method="post")
+            .form-group
+              label Username
+              input.form-control(type="text" name="username")
+            .form-group
+              label Password
+              input.form-control(type="password" name="password")
+            button.btn.btn-detault(type="submit") Register!
+            br
+            br
+          p Already registered? 
+          a(href="/login") Login!

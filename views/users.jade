@@ -1,0 +1,12 @@
+doctype html
+html(lang="en", ng-app="bewd.tictactoe.board")
+    head
+      include ./includes/bower_bootstrap.jade
+      title User List!
+    body  
+      .container
+        h1 User List!
+        ul
+          each user in users
+            li
+              p #{user.username}

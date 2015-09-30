@@ -1,28 +1,25 @@
 angular.module('bewd.tictactoe.board', [])
-
-// angular.module('bewd.tictactoe.board')
-//   .controller('BoardCtrl',['$scope', function($scope) {
-//     this.theBoard = [['X', 'O', 'X'], ['O', 'O', 'X'], ['O', 'X', '']];
-//     $scope.addLetter = function () {
-//         $scope.greeting = $scope.letter;
-//       };
-//     var n = 'Y'
-//     $scope.makeYourMove = function () {
-//         theBoard[2][2] = n;
-//       };
-//     }])
+// create angular module named bewd.tictactoe.board
 
   .controller('BoardCtrl', function() {
     this.makeYourMove = function makeYourMove() {
-      this.theBoard[2][2] = 'Y';
+      var newmove = this.letter;
+      var row = this.rowcell;
+      var col = this.colcell;
+      this.theBoard[row][col] = newmove;
+      this.letter = '';
+      this.rowcell = '';
+      this.colcell = '';
     };
   })
   .directive('ticTacToeBoard', function() {
+    //create directive called ticTacToeBoard within module bewd.tictactoe.board
     return {
       scope:{
         theBoard: '='
       },
       restrict: 'E',
+      //restrict the directive to being an element (not an attribute, comment, or class)
       templateUrl: '/public/tmpls/board.html',
       controller: 'BoardCtrl',
       controllerAs: 'vm',

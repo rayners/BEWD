@@ -1,6 +1,8 @@
 <body ng-app="bewd.tictactoe.board">
+  <!-- calls angular module bewd.tictactoe.board defined in board.js -->
 <div ng-controller="BoardCtrl" class="container">
-  <table class="table table-condensed table-striped">
+  <!-- calls angular controlled BoardCtrl defined in board.js -->
+  <table class="table table-condensed table-bordered text-center">
     <tr ng-repeat="ticTacRow in vm.theBoard track by $index">
       <td ng-repeat="column in ticTacRow track by $index">
         <!-- <input type="text" ng-model="tictacRow[column]" placeholder="{{column}}"> -->
@@ -8,8 +10,10 @@
       </td>
     </tr>
   </table>
-    <!-- X or O: <input type="text" ng-model="letter">
-    <button ng-click='addLetter()'>Assign</button>
-    {{letter}} -->
+  <form class="form-horizontal">
+    X or O: <input type="text" ng-model="vm.letter"> <br>
+    Row: <input type="text" ng-model="vm.rowcell"> <br>
+    Col: <input type="text" ng-model="vm.colcell">
+  </form>
   <button class="btn btn-default" ng-click="vm.makeYourMove()">Move</button>
 </div>
